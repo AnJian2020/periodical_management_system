@@ -10,7 +10,6 @@ class UserTest(APITestCase):
     apiclient = APIClient()
 
     def setUp(self) -> None:
-
         settings.CELERY_TASK_ALWAYS_EAGER=True
         User.objects.create_user(username='xuhao', password='2016', email='xuhao@foxmail.com')
         # client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
@@ -35,3 +34,7 @@ class UserTest(APITestCase):
         self.assertEqual(userInformation.status_code,status.HTTP_204_NO_CONTENT)
         self.assertDictEqual(userInformation.data,{'message':'用户未完善个人信息。'})
 
+
+    @override_settings(CELERY_TASK_ALWAYS_EAGER=True)
+    def testUser(self):
+        pass

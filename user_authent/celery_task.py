@@ -8,8 +8,9 @@ from celery import shared_task
 from periodical_management_system.settings import KEY_VALUE_OUT_TIME
 from django.contrib.auth.models import User, Group
 from django.forms import model_to_dict
-from .models import UserInformation, UserMenuModel,GroupMenuShip
-from .modelSerializer import UserInformationModelSerializer, UserMenuModelSerialzier
+from django.db.models import Q
+from .models import UserInformation, UserMenuModel, GroupMenuShip
+from .modelSerializer import UserInformationModelSerializer,UserMenuModelSerialzier
 from django_redis import get_redis_connection
 
 redis_connection = get_redis_connection()
@@ -128,8 +129,9 @@ def getUserMenuTask(user, username):
     for item in menu:
         if item.parent_menu:
             for firstMenu in menuList:
-                if item.parent_menu.id==firstMenu['id']:
-                    firstMenu['child_menu'].append(dict(id=item.id, menu_name=item.menu_name, menu_level=item.menu_level, child_menu=[]))
+                if item.parent_menu.id == firstMenu['id']:
+                    firstMenu['child_menu'].append(
+                        dict(id=item.id, menu_name=item.menu_name, menu_level=item.menu_level, child_menu=[]))
     redis_connection.setex(userGroup.name + ":menu", 60 * 60, json.dumps(menuList))
     redis_connection.setex(username + ":group", 60 * 60, userGroup.name)
     return json.dumps(menuList)
@@ -142,7 +144,7 @@ def createUserMenuTask(**menuData):
     :param menuData:
     :return:
     """
-    MENU = ('menu_name', 'menu_level','parent_menu','menu_path','menu_role')
+    MENU = ('menu_name', 'menu_level', 'parent_menu', 'menu_path', 'menu_role')
     for item in menuData:
         if item not in MENU:
             return json.dumps({'result': 'fail', 'message': '提交的数据项不全！'})
@@ -159,21 +161,62 @@ def createUserMenuTask(**menuData):
     # return json.dumps({"result": 'fail', 'message': '该用户菜单已经存在，无需重复添加！'})
     if not operation:
         try:
-            menu_role=menuData.pop('menu_role')
+            menu_role = menuData.pop('menu_role')
             if menuData.get('parent_menu'):
-                menuData['parent_menu']=UserMenuModel.objects.filter(id=menuData['parent_menu']).first()
-            menu=UserMenuModel.objects.create(**menuData)
-            group=Group.objects.filter(id=menu_role).first()
-            group_menu=GroupMenuShip(group_id_id=group.id,menu_id_id=menu.id)
+                menuData['parent_menu'] = UserMenuModel.objects.filter(id=menuData['parent_menu']).first()
+            menu = UserMenuModel.objects.create(**menuData)
+            group = Group.objects.filter(id=menu_role).first()
+            group_menu = GroupMenuShip(group_id_id=group.id, menu_id_id=menu.id)
             group_menu.save()
-            redis_connection.delete(group.name+':menu')
+            redis_connection.delete(group.name + ':menu')
             return json.dumps({'result': 'success', 'message': '用户菜单添加成功！'})
         except Exception as error:
             raise Exception(error)
-            return json.dumps({"result":'fail','message':'error'})
+            return json.dumps({"result": 'fail', 'message': 'error'})
     return json.dumps({"result": 'fail', 'message': '该用户菜单已经存在，无需重复添加！'})
 
 
 @shared_task
-def delete():
-    pass
+def deleteUserMenuTask(options,delete_menu_role):
+    """
+    :param options:
+    :param delete_menu_role: 删除的菜单所属用户组的组名
+    :return:
+    """
+    if isinstance(options, (int, str)):
+        menu = UserMenuModel.objects.filter(Q(id=options) | Q(menu_name=options))
+        if not menu:
+            return json.dumps({'status': 204, "data": str(options) + "删除失败！失败原因：选择的删除项不存在。"})
+        menu.delete()
+        redis_connection.delete(delete_menu_role + ':menu')
+        return json.dumps({'status': 200, "data": str(options) + "删除成功！"})
+    return json.dumps({"status": 204, 'data': str(options) + "删除失败！失败原因：选择的删除项不正确。"})
+
+
+@shared_task
+def modifyUserMenuTask(**new_menu_data):
+    """
+    :param new_menu_data:
+    :return:
+    """
+    menuId=new_menu_data.get('id')
+    menu=UserMenuModel.objects.filter(id=menuId).first()
+    if menu:
+        parent_menu_id=new_menu_data.get('parent_menu')
+        modify_menu_role=new_menu_data.pop('modify_menu_role')
+        # new_menu_data['parent_menu']=UserMenuModel.objects.filter(id=parent_menu_id).first().id
+        parent_menu=UserMenuModel.objects.filter(id=parent_menu_id).first()
+        if parent_menu:
+            new_menu_data['parent_menu']=parent_menu.id
+        else:
+            return json.dumps({"status":204,'data':"设置的父菜单不存在"})
+        serializer=UserMenuModelSerialzier(data=new_menu_data)
+        if serializer.is_valid():
+            serializer.update(menu,new_menu_data)
+            redis_connection.delete(modify_menu_role + ':menu')
+            return json.dumps({'status':200,'data':'菜单修改成功。'})
+        return json.dumps({'status':204,'data':serializer.errors})
+    return json.dumps({'status':204,'data':'该菜单不存在！'})
+
+
+

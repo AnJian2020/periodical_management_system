@@ -43,4 +43,19 @@ class UserMenuModelSerialzier(serializers.ModelSerializer):
         menu = UserMenuModel.objects.create(**validated_data)
         return menu
 
+    def update(self, instance, validated_data):
+        """
+
+        :param instance:
+        :param validated_data:
+        :return:
+        """
+        menu=UserMenuModel.objects.filter(id=validated_data.get('id'))
+        menu.update(**validated_data)
+        # menu[0].parent_menu.set(parent_menu)
+        return menu
+
+
+
+
 

@@ -42,7 +42,7 @@ class UserMenuModel(models.Model):
     用户菜单模型
     """
     id=models.AutoField(primary_key=True)
-    menu_name=models.CharField(max_length=128,verbose_name="名称",unique=True)
+    menu_name=models.CharField(max_length=128,verbose_name="名称")
     menu_level=models.IntegerField(verbose_name="级别")
     parent_menu=models.ForeignKey(to='self',null=True,blank=True,on_delete=models.CASCADE)
     # child_menu=models.ManyToManyField(to='self',db_table='menu_relationship',null=True,blank=True)

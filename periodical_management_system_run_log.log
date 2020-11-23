@@ -4865,3 +4865,906 @@ AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse`
 2020-11-23 12:56:35,539 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
 2020-11-23 12:57:42,104 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
 2020-11-23 12:57:44,405 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 14:22:18,349 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 14:23:15,192 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\admin.py changed, reloading.
+2020-11-23 14:23:16,614 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 14:23:45,576 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-23 14:23:45,578 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-23 14:24:09,087 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 186, in get
+    menuList = json.loads(getUserMenuTask.delay(user=request.user.id, username=request.user.__str__()).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+AttributeError: 'UserMenuModel' object has no attribute 'child_level'
+2020-11-23 14:24:59,693 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 14:25:01,681 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 14:25:10,541 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 186, in get
+    menuList = json.loads(getUserMenuTask.delay(user=request.user.id, username=request.user.__str__()).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+TypeError: Object of type UserMenuModel is not JSON serializable
+2020-11-23 14:25:38,526 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 14:25:40,504 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 14:25:43,758 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 186, in get
+    menuList = json.loads(getUserMenuTask.delay(user=request.user.id, username=request.user.__str__()).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+TypeError: Object of type UserMenuModel is not JSON serializable
+2020-11-23 14:27:03,412 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 14:27:05,207 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 14:27:10,750 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 186, in get
+    menuList = json.loads(getUserMenuTask.delay(user=request.user.id, username=request.user.__str__()).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+AttributeError: 'NoneType' object has no attribute 'id'
+2020-11-23 14:28:27,900 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 14:28:29,830 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 14:31:20,581 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 14:31:23,673 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 14:32:00,664 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\models.py changed, reloading.
+2020-11-23 14:32:03,206 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 14:32:31,571 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\admin.py changed, reloading.
+2020-11-23 14:32:33,910 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 18:14:56,692 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-23 18:15:02,361 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 18:16:50,584 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-23 18:16:52,513 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 18:16:58,408 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-23 18:17:00,424 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 18:31:13,495 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-23 18:31:14,996 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 18:32:11,855 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'get'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 208, in delete
+    options=request.get('options',None)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'get'
+2020-11-23 18:32:34,072 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-23 18:32:35,932 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 20:25:33,992 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-23 20:25:33,993 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-23 20:40:03,373 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 20:40:05,979 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 20:50:14,818 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 20:50:17,213 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:10:07,232 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-23 21:10:11,284 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:12:09,192 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:12:11,613 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:24:52,758 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:24:54,608 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:27:27,854 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:27:30,804 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:30:07,852 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:30:10,024 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:30:14,193 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:30:17,003 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:38:27,625 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:38:29,729 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:39:03,967 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-23 21:39:03,968 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-23 21:39:38,983 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-23 21:39:45,653 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-23 21:44:10,134 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:44:12,378 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:45:58,749 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:46:00,694 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:47:58,803 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:48:00,873 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:48:32,844 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1774, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 196, in modifyUserMenuTask
+    new_menu_data['parent_menu']=UserMenuModel.objects.filter(id=parent_menu).first()
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\sql\query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\sql\query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\sql\query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\lookups.py", line 76, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1778, in get_prep_value
+    ) from e
+TypeError: Field 'id' expected a number but got [].
+2020-11-23 21:50:54,039 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:50:56,211 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:52:39,370 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-23 21:52:41,635 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:53:30,952 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\serializers.py", line 970, in update
+    info = model_meta.get_field_info(instance)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+AttributeError: 'QuerySet' object has no attribute '_meta'
+2020-11-23 21:53:52,372 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:53:54,632 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 21:53:55,341 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\serializers.py", line 990, in update
+    field.set(value)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 992, in set
+    objs = tuple(objs)
+TypeError: 'int' object is not iterable
+2020-11-23 21:55:20,758 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 21:55:22,853 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 22:01:27,140 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 22:01:29,471 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 22:01:48,810 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 22:01:51,216 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 22:01:51,810 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\serializers.py", line 981, in update
+    setattr(instance, attr, value)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 220, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "40": "UserMenuModel.parent_menu" must be a "UserMenuModel" instance.
+2020-11-23 22:02:36,693 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\serializers.py", line 981, in update
+    setattr(instance, attr, value)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 220, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "44": "UserMenuModel.parent_menu" must be a "UserMenuModel" instance.
+2020-11-23 22:11:33,039 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-23 22:11:33,040 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-23 22:11:53,244 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\serializers.py", line 981, in update
+    setattr(instance, attr, value)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 220, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "44": "UserMenuModel.parent_menu" must be a "UserMenuModel" instance.
+2020-11-23 22:12:06,700 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-23 22:12:08,593 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 22:24:51,415 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-23 22:24:53,372 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 22:57:27,119 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-23 22:57:28,876 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 23:10:54,530 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-23 23:10:56,512 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 23:10:57,958 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-23 23:10:57,960 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-23 23:11:33,948 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 53, in update
+    parent_menu_data=validated_data.pop('parent_data')
+KeyError: 'parent_data'
+2020-11-23 23:11:53,139 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-23 23:11:55,258 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 23:11:56,347 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 54, in update
+    parent_menu_id=parent_menu_data.get('id')
+AttributeError: 'int' object has no attribute 'get'
+2020-11-23 23:12:27,599 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-23 23:12:29,699 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 23:12:30,410 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 61, in update
+    menu.update(**validated_data)
+AttributeError: 'UserMenuModel' object has no attribute 'update'
+2020-11-23 23:13:13,378 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-23 23:13:15,566 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 23:13:16,728 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 61, in update
+    menu.update(**validated_data)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\query.py", line 780, in update
+    query.add_update_values(kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\db\models\sql\subqueries.py", line 91, in add_update_values
+    'foreign keys permitted).' % field
+django.core.exceptions.FieldError: Cannot update model field <django.db.models.fields.related.ManyToManyField: menu_role> (only non-relations and foreign keys permitted).
+2020-11-23 23:14:13,144 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 62, in update
+    menu.parent_menu.set(parent_menu)
+AttributeError: 'QuerySet' object has no attribute 'parent_menu'
+2020-11-23 23:14:34,760 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 62, in update
+    menu.parent_menu.set(parent_menu)
+AttributeError: 'QuerySet' object has no attribute 'parent_menu'
+2020-11-23 23:15:09,792 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-23 23:15:11,792 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 23:15:12,493 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 61, in update
+    menu.update(**validated_data)
+AttributeError: 'UserMenuModel' object has no attribute 'update'
+2020-11-23 23:15:31,587 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-23 23:15:33,783 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-23 23:15:43,741 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 62, in update
+    menu[0].parent_menu.set(parent_menu)
+AttributeError: 'NoneType' object has no attribute 'set'
+2020-11-23 23:16:46,589 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 62, in update
+    menu[0].parent_menu.set(parent_menu)
+AttributeError: 'NoneType' object has no attribute 'set'
+2020-11-23 23:16:58,768 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 62, in update
+    menu[0].parent_menu.set(parent_menu)
+AttributeError: 'NoneType' object has no attribute 'set'
+2020-11-23 23:46:36,803 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-23 23:46:38,974 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:07:58,709 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-24 00:08:00,393 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:08:01,079 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-24 00:08:01,080 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-24 00:08:20,068 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 62, in update
+    menu[0].parent_menu.set(parent_menu)
+AttributeError: 'NoneType' object has no attribute 'set'
+2020-11-24 00:08:51,101 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-24 00:08:52,902 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:10:33,907 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-24 00:10:36,203 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:10:36,956 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 54, in update
+    parent_menu_id=parent_menu_data.get('id')
+AttributeError: 'str' object has no attribute 'get'
+2020-11-24 00:10:56,205 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-24 00:10:58,090 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:11:11,004 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-24 00:11:12,994 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:11:13,650 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 199, in modifyUserMenuTask
+    serializer.update(menu,new_menu_data)
+  File "D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py", line 62, in update
+    menu[0].parent_menu.set(parent_menu)
+AttributeError: 'UserMenuModel' object has no attribute 'set'
+2020-11-24 00:11:39,517 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-24 00:11:41,756 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:13:05,339 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\modelSerializer.py changed, reloading.
+2020-11-24 00:13:07,723 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:14:40,329 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-24 00:14:42,480 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:14:45,003 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 225, in put
+    modifyUserMenuTaskResult=json.loads(modifyUserMenuTask(**new_menu_data))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\local.py", line 191, in __call__
+    return self._get_current_object()(*a, **kw)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\app\task.py", line 391, in __call__
+    return self.run(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\celery_task.py", line 196, in modifyUserMenuTask
+    new_menu_data['parent_menu']=UserMenuModel.objects.filter(id=parent_menu).first().id
+AttributeError: 'NoneType' object has no attribute 'id'
+2020-11-24 00:21:17,286 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-24 00:21:30,618 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:25:09,263 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-24 00:25:11,396 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:33:20,615 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-24 00:33:22,927 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:37:01,155 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-24 00:37:03,480 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:37:35,431 - log.py[line:230] - WARNING: Not Found: /
+2020-11-24 00:37:36,077 - log.py[line:230] - WARNING: Not Found: /favicon.ico
+2020-11-24 00:38:29,890 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\admin.py changed, reloading.
+2020-11-24 00:38:32,209 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:39:25,552 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-24 00:39:25,552 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-24 00:41:02,907 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-24 00:41:04,791 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:42:07,545 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:42:19,740 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-24 00:42:19,741 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-24 00:42:21,691 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-24 00:42:21,692 - log.py[line:230] - WARNING: Forbidden: /user/menu
+2020-11-24 00:45:34,539 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\celery_task.py changed, reloading.
+2020-11-24 00:45:36,228 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:46:09,203 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-24 00:46:11,416 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:55:04,080 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-24 00:55:05,919 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 00:59:13,253 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 227, in put
+    modifyUserMenuTaskResult = json.loads(modifyUserMenuTask.delay(**new_menu_data))
+  File "D:\application\python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not AsyncResult
+2020-11-24 00:59:37,880 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\user_authent\views.py changed, reloading.
+2020-11-24 00:59:40,187 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 01:00:37,628 - log.py[line:230] - ERROR: Internal Server Error: /user/menu
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 227, in put
+    modifyUserMenuTaskResult = json.loads(modifyUserMenuTask.delay(**new_menu_data).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+KeyError: 'modify_menu_role'

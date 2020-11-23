@@ -22,7 +22,7 @@ from rest_framework.pagination import PageNumberPagination
 from .modelSerializer import UserMenuModelSerialzier
 from django.utils.decorators import method_decorator
 from .celery_task import userRegister, sendIdentityCode, selectUserInformation, modifyUserInformation, \
-    createUserInformation, getUserMenuTask, createUserMenuTask
+    createUserInformation, getUserMenuTask, createUserMenuTask, deleteUserMenuTask, modifyUserMenuTask
 
 redis_connection = get_redis_connection()
 
@@ -170,6 +170,7 @@ class UserInformationView(APIView):
             return Response(status=204, data={'message': createUserInformationResult['message']})
 
 
+@method_decorator(cache_page(VIEW_OUT_TIME), name='get')
 class MenuView(APIView):
     """
     用户菜单获取处理视图
@@ -186,6 +187,7 @@ class MenuView(APIView):
         menuList = json.loads(getUserMenuTask.delay(user=request.user.id, username=request.user.__str__()).get())
         return Response(status=200, data={"message": menuList})
 
+    @recode_operation_log('user create menu.', 'warning')
     def post(self, request) -> Response:
         """
         创建用户菜单，后继会加入权限要求。
@@ -201,13 +203,28 @@ class MenuView(APIView):
     def delete(self, request) -> Response:
         """
         如用户具有删除菜单权限，即可删除菜单，后端返回的菜单查询中将不含该删除菜单。
+        如果删除的是一级菜单，则其子菜单将一并删除，而删除子菜单，则不影响父菜单
         :param request:
         :return:
         """
         if request.user.has_perm('user_authent.delete_usermenumodel'):
+            options = request.data.get('options', None)
+            delete_menu_role=request.data.get('menu_role',None)
+            # deleteUserMenuTaskResult=json.loads(deleteUserMenuTask(options))
+            deleteUserMenuTaskResult = json.loads(deleteUserMenuTask.delay(options,delete_menu_role).get())
+            return Response(status=deleteUserMenuTaskResult['status'],
+                            data={"message": deleteUserMenuTaskResult['data']})
+        return Response(status=204, data={"message": '无相应权限。'})
 
-            return Response(status=200,data={"message":"权限"})
-        return Response(status=200,data={"message":'bu '})
-
-    def put(self,request)->Response:
-        pass
+    def put(self, request) -> Response:
+        """
+        修改菜单信息
+        :param request:
+        :return:
+        """
+        if request.user.has_perm('user_authent.change_usermenumodel'):
+            new_menu_data = request.data
+            modifyUserMenuTaskResult = json.loads(modifyUserMenuTask.delay(**new_menu_data).get())
+            return Response(status=modifyUserMenuTaskResult['status'],
+                            data={'message': modifyUserMenuTaskResult['data']})
+        return Response(status=204, data={"message": "无相应权限。"})
