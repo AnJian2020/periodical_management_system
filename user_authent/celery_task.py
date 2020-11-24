@@ -199,6 +199,10 @@ def modifyUserMenuTask(**new_menu_data):
     :param new_menu_data:
     :return:
     """
+    MENU = ('menu_name', 'menu_level', 'parent_menu', 'menu_path', 'modify_menu_role')
+    for item in MENU:
+        if item not in new_menu_data.keys():
+            return json.dumps({"status":204,'data':'提交的数据项不全！'})
     menuId=new_menu_data.get('id')
     menu=UserMenuModel.objects.filter(id=menuId).first()
     if menu:

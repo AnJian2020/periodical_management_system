@@ -210,6 +210,8 @@ class MenuView(APIView):
         if request.user.has_perm('user_authent.delete_usermenumodel'):
             options = request.data.get('options', None)
             delete_menu_role=request.data.get('menu_role',None)
+            if not options and not delete_menu_role:
+                return Response(status=204,data={"message":"数据格式不正确！"})
             # deleteUserMenuTaskResult=json.loads(deleteUserMenuTask(options))
             deleteUserMenuTaskResult = json.loads(deleteUserMenuTask.delay(options,delete_menu_role).get())
             return Response(status=deleteUserMenuTaskResult['status'],
