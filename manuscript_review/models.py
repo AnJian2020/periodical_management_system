@@ -21,8 +21,8 @@ class CheckManuscriptModel(models.Model):
         return self.id
 
     class Meta:
-        verbose_name = '稿件检测mx'
-        verbose_name_plural = '稿件检测信息表'
+        verbose_name = '稿件检测模型'
+        verbose_name_plural = '稿件检测模型'
         db_table = 'check_manuscript_model'
 
 

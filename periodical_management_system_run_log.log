@@ -5768,3 +5768,788 @@ Traceback (most recent call last):
   File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
     raise value
 KeyError: 'modify_menu_role'
+2020-11-24 12:08:31,654 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 12:08:34,433 - log.py[line:230] - WARNING: Not Found: /
+2020-11-24 12:12:16,370 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\__init__.py changed, reloading.
+2020-11-24 12:12:18,216 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 12:13:59,850 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\admin.py changed, reloading.
+2020-11-24 12:14:02,188 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:31:26,998 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\periodical_management_system\urls.py changed, reloading.
+2020-11-24 14:31:28,687 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:31:36,035 - log.py[line:230] - WARNING: Not Found: /
+2020-11-24 14:31:58,126 - log.py[line:230] - ERROR: Internal Server Error: /manuscriptrecord/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 22, in get
+    selectSubjectTaskResult=json.loads(selectSubjectTask())
+  File "D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py", line 11, in selectSubjectTask
+    return json.dumps({'data':selectSubjectData})
+  File "D:\application\python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "D:\application\python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\application\python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\application\python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+2020-11-24 14:33:18,642 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 14:33:20,261 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:33:51,052 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 14:33:52,835 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:33:55,597 - log.py[line:230] - ERROR: Internal Server Error: /manuscriptrecord/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 22, in get
+    selectSubjectTaskResult=json.loads(selectSubjectTask())
+  File "D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py", line 13, in selectSubjectTask
+    return json.dumps({'data':selectSubjectData})
+  File "D:\application\python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "D:\application\python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\application\python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\application\python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+2020-11-24 14:34:16,254 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 14:34:17,818 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:35:01,706 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 14:35:03,370 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:39:52,353 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 14:39:53,968 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:45:17,084 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 14:45:18,934 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:46:21,576 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\periodical_management_system\urls.py changed, reloading.
+2020-11-24 14:46:23,247 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:48:37,335 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 14:48:39,136 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:48:47,228 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 22, in get
+    selectSubjectTaskResult=json.loads(selectSubjectTask.delay())
+  File "D:\application\python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not AsyncResult
+2020-11-24 14:49:10,986 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-24 14:49:12,929 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:49:14,190 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 22, in get
+    selectSubjectTaskResult=json.loads(selectSubjectTask.delay().get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+kombu.exceptions.EncodeError: TypeError('Object of type bytes is not JSON serializable')
+2020-11-24 14:49:16,089 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 22, in get
+    selectSubjectTaskResult=json.loads(selectSubjectTask.delay().get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+kombu.exceptions.EncodeError: TypeError('Object of type bytes is not JSON serializable')
+2020-11-24 14:51:13,663 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 14:51:15,654 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 14:55:01,166 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 14:55:03,195 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:04:18,225 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-24 15:04:20,360 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:06:27,711 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:06:29,469 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:07:10,954 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:07:12,479 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:08:18,737 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:08:20,456 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:09:53,585 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:09:55,362 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:10:42,259 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:12:02,937 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:12:18,601 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-24 15:12:20,275 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:13:04,384 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:13:32,943 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:13:34,799 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:13:35,301 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 27, in get
+    selectSubjectTaskResult = json.loads(selectSubjectTask())
+  File "D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py", line 19, in selectSubjectTask
+    result=systemRedis.get('subject')
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\redis\client.py", line 1606, in get
+    return self.execute_command('GET', name)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\redis\client.py", line 901, in execute_command
+    return self.parse_response(conn, command_name, **options)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\redis\client.py", line 915, in parse_response
+    response = connection.read_response()
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\redis\connection.py", line 756, in read_response
+    raise response
+redis.exceptions.ResponseError: WRONGTYPE Operation against a key holding the wrong kind of value
+2020-11-24 15:14:49,754 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:14:51,562 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:14:55,010 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 27, in get
+    selectSubjectTaskResult = json.loads(selectSubjectTask())
+  File "D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py", line 22, in selectSubjectTask
+    return result.decode('utf-8')
+AttributeError: 'list' object has no attribute 'decode'
+2020-11-24 15:15:12,499 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:15:14,194 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:15:14,863 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 27, in get
+    selectSubjectTaskResult = json.loads(selectSubjectTask())
+  File "D:\application\python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-11-24 15:15:16,847 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 27, in get
+    selectSubjectTaskResult = json.loads(selectSubjectTask())
+  File "D:\application\python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-11-24 15:16:29,870 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:16:31,786 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:16:34,776 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 27, in get
+    selectSubjectTaskResult = json.loads(selectSubjectTask())
+  File "D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py", line 21, in selectSubjectTask
+    return json.dumps({'data':result})
+  File "D:\application\python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "D:\application\python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\application\python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\application\python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bytes is not JSON serializable
+2020-11-24 15:17:32,789 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:17:34,835 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:17:37,045 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 27, in get
+    selectSubjectTaskResult = json.loads(selectSubjectTask())
+  File "D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py", line 21, in selectSubjectTask
+    return json.dumps({'data':[item.decode for item in result]})
+  File "D:\application\python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "D:\application\python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\application\python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\application\python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type builtin_function_or_method is not JSON serializable
+2020-11-24 15:17:57,142 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:17:58,829 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:18:12,285 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:18:13,927 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:18:49,881 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:18:51,441 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:19:11,310 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:19:48,382 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:19:50,092 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:22:45,105 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:22:46,863 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:24:09,308 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:24:11,352 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:24:41,121 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:24:42,822 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:25:09,281 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:25:11,025 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:26:17,759 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:26:19,501 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 15:27:02,155 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 15:27:04,402 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:35:02,351 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:35:04,723 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:35:40,891 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:35:42,856 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:37:02,351 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:37:04,119 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:40:31,485 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:40:33,093 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:41:19,965 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 27, in get
+    selectSubjectTaskResult = json.loads(selectSubjectTask())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\local.py", line 191, in __call__
+    return self._get_current_object()(*a, **kw)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\app\task.py", line 391, in __call__
+    return self.run(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py", line 20, in selectSubjectTask
+    result = systemRedis.lrange('subject')
+TypeError: lrange() missing 2 required positional arguments: 'start' and 'end'
+2020-11-24 18:41:36,109 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:41:37,771 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:41:39,839 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 27, in get
+    selectSubjectTaskResult = json.loads(selectSubjectTask())
+  File "D:\application\python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2020-11-24 18:41:54,497 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:41:56,558 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:41:57,382 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 27, in get
+    selectSubjectTaskResult = json.loads(selectSubjectTask())
+  File "D:\application\python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2020-11-24 18:41:59,300 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 27, in get
+    selectSubjectTaskResult = json.loads(selectSubjectTask())
+  File "D:\application\python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2020-11-24 18:42:52,709 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:42:54,753 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:43:23,402 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:43:25,071 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:43:40,697 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:43:42,392 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:47:03,751 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:47:05,817 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:47:31,236 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 18:47:33,048 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:51:50,769 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-24 18:51:52,537 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:52:07,915 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-24 18:52:09,548 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:53:15,245 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_review\models.py changed, reloading.
+2020-11-24 18:53:16,811 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 18:55:26,144 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-24 18:55:27,868 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 19:01:21,495 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 19:01:23,565 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 19:07:32,761 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 19:07:34,379 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 19:11:21,156 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 19:11:22,755 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 19:33:29,209 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 19:33:31,005 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 19:40:07,186 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 19:40:09,007 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 19:43:09,548 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 19:43:11,145 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 20:32:38,191 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 20:32:40,255 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 23:06:12,112 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 23:06:13,883 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 23:29:36,266 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-24 23:29:38,628 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-24 23:56:45,205 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\models.py changed, reloading.
+2020-11-24 23:56:47,599 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:09:46,316 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 00:09:48,954 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:13:32,586 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 28, in get
+    selectSubjectTaskResult = json.loads(selectSubjectOrTradeOrContributionTypeTask.delay(options='subject').get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+celery.exceptions.NotRegistered: 'manuscript_record.celery_task.selectSubjectOrTradeOrContributionTypeTask'
+2020-11-25 00:13:50,854 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:13:54,831 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 28, in get
+    selectSubjectTaskResult = json.loads(selectSubjectOrTradeOrContributionTypeTask.delay(options='subject').get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+celery.exceptions.NotRegistered: 'manuscript_record.celery_task.selectSubjectOrTradeOrContributionTypeTask'
+2020-11-25 00:27:00,907 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 00:27:03,025 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:28:04,388 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 00:28:06,459 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:29:07,435 - views.py[line:46] - WARNING: user create new subject
+2020-11-25 00:29:07,439 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-25 00:29:55,774 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-25 00:29:58,573 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:30:00,768 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-25 00:30:03,626 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-25 00:30:23,591 - log.py[line:230] - WARNING: Not Found: /
+2020-11-25 00:30:24,177 - log.py[line:230] - WARNING: Not Found: /favicon.ico
+2020-11-25 00:31:49,392 - views.py[line:46] - WARNING: user create new subject
+2020-11-25 00:31:49,468 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 40, in post
+    newSubjectData['options'] = 'subject'
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\http\request.py", line 491, in __setitem__
+    self._assert_mutable()
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\http\request.py", line 488, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+2020-11-25 00:33:21,193 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-25 00:33:23,161 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:33:24,052 - views.py[line:46] - WARNING: user create new subject
+2020-11-25 00:33:25,180 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 00:34:07,461 - views.py[line:46] - WARNING: user create new subject
+2020-11-25 00:34:07,973 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 00:35:28,081 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 00:35:30,336 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:35:40,003 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 00:35:42,003 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:36:05,144 - views.py[line:46] - WARNING: user create new subject
+2020-11-25 00:36:05,998 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 41, in post
+    createSubjectTaskResult=json.loads(createSubjectOrTradeOrContributionTypeTask.delay(**newSubjectData).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+AttributeError: 'list' object has no attribute 'decode'
+2020-11-25 00:36:39,324 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-25 00:36:41,735 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:36:42,460 - views.py[line:46] - WARNING: user create new subject
+2020-11-25 00:36:43,301 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 42, in post
+    createSubjectTaskResult=json.loads(createSubjectOrTradeOrContributionTypeTask.delay(**newSubjectData).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+AttributeError: 'list' object has no attribute 'decode'
+2020-11-25 00:37:27,312 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 00:37:29,358 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:38:31,246 - views.py[line:46] - WARNING: user create new subject
+2020-11-25 00:38:32,061 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 00:39:00,914 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-25 00:39:03,335 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:39:04,201 - views.py[line:46] - WARNING: user create new subject
+2020-11-25 00:39:05,112 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 00:39:36,564 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-25 00:39:38,756 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 00:39:39,592 - views.py[line:46] - WARNING: user create new subject
+2020-11-25 00:39:40,738 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 41, in post
+    createSubjectTaskResult=json.loads(createSubjectOrTradeOrContributionTypeTask.delay(**newSubjectData).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+AttributeError: 'str' object has no attribute 'decode'
+2020-11-25 00:39:56,653 - views.py[line:46] - WARNING: user create new subject
+2020-11-25 00:40:05,231 - log.py[line:230] - WARNING: Forbidden: /record/subject

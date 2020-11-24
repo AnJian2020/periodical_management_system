@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import SubjectModel,ContributionTypeModel,TradeModel
 
-# Register your models here.
+admin.site.register(SubjectModel)
+admin.site.register(ContributionTypeModel)
+admin.site.register(TradeModel)

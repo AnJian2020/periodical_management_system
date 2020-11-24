@@ -7,7 +7,7 @@ class SubjectModel(models.Model):
     """
     研究方向模型
     """
-    subject_id = models.CharField(verbose_name="研究方向ID", primary_key=True, max_length=25)
+    id = models.CharField(verbose_name="研究方向ID", primary_key=True, max_length=25)
     name = models.CharField(verbose_name="研究方向", max_length=150)
     brief_introduction = models.TextField(verbose_name="简介", null=True, blank=True)
     add_time = models.DateTimeField(verbose_name="创建时间", default=timezone.now)
@@ -25,7 +25,7 @@ class ContributionTypeModel(models.Model):
     """
     投稿类型模型
     """
-    contribution_type_id = models.CharField(verbose_name="投稿类型ID", primary_key=True, max_length=25)
+    id = models.CharField(verbose_name="投稿类型ID", primary_key=True, max_length=25)
     name = models.CharField(verbose_name="投稿类型", max_length=120)
     brief_introduction = models.TextField(verbose_name="简介", null=True, blank=True)
     add_time = models.DateTimeField(verbose_name="创建时间", default=timezone.now)
@@ -43,7 +43,7 @@ class TradeModel(models.Model):
     """
     行业领域模型
     """
-    trade_id = models.CharField(max_length=25, primary_key=True, verbose_name="行业领域ID")
+    id = models.CharField(max_length=25, primary_key=True, verbose_name="行业领域ID")
     name = models.CharField(verbose_name="行业领域", max_length=120)
     brief_introduction = models.TextField(verbose_name="简介", null=True, blank=True)
     add_time = models.DateTimeField(verbose_name="创建时间", default=timezone.now)

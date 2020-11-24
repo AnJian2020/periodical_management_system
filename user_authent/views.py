@@ -13,7 +13,6 @@ from django_redis import get_redis_connection
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User, Group
 from rest_framework.views import APIView
-
 from .models import UserMenuModel
 from .token_authentication import TokenAuthenticationRedis
 from rest_framework.permissions import AllowAny, IsAuthenticated
