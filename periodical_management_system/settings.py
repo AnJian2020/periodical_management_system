@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -28,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,12 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_celery_results',    #分布式任务
-    'django_celery_beat',        #定时任务
+    'django_celery_results',  # 分布式任务
+    'django_celery_beat',  # 定时任务
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-    'user_authent'
+    'user_authent',
+    'manuscript_record',
+    'manuscript_review'
 ]
 
 MIDDLEWARE = [
@@ -79,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'periodical_management_system.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -87,12 +86,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'periodical_management_system.sqlite3',
-        'TEST':{
-            'NAME':'periodical_management_db'
+        'TEST': {
+            'NAME': 'periodical_management_db'
         }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -112,7 +110,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -125,7 +122,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -143,10 +139,10 @@ REST_FRAMEWORK = {
 }
 
 # 利用redis作为系统缓存
-CACHES={
-    'default':{
-        "BACKEND":"django_redis.cache.RedisCache",
-        "LOCATION":"redis://127.0.0.1:6379/0",
+CACHES = {
+    'default': {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/0",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -158,29 +154,29 @@ CACHES={
 }
 
 # 设置存储celery任务队列的redis数据库
-CELERY_BROKER_URL='redis://127.0.0.1:6379/1'
-CELERT_ACCEPT_CONTENT=['json']
-CELERY_TASK_SERIALIZER='json'
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/1'
+CELERT_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
 # 设置存储celery任务结果的数据库
-CELERY_RESULT_BACKEND='django-db'
+CELERY_RESULT_BACKEND = 'django-db'
 
 # 设置定时任务
-CELERY_ENABLE_UTC=False
-CELERY_BEAT_SCHEDULER='django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_ENABLE_UTC = False
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 # token过期时间
-TOKEN_OUT_TIME=30*60
+TOKEN_OUT_TIME = 30 * 60
 # 视图过期时间
-VIEW_OUT_TIME=60
+VIEW_OUT_TIME = 60
 # 键值对过期时间
-KEY_VALUE_OUT_TIME=60
+KEY_VALUE_OUT_TIME = 60
 
 # 设置跨域
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = ("*")
 CORS_ALLOW_METHODS = ('DELETE', 'GET', 'POST', 'PUT')
-CORS_ALLOW_HEADERS=(
+CORS_ALLOW_HEADERS = (
     'XMLHttpRequest',
     'X_FILENAME',
     'accept-encoding',
@@ -192,7 +188,6 @@ CORS_ALLOW_HEADERS=(
     'x-requested-with',
     'dnt'
 )
-
 
 # 邮件配置信息
 EMAIL_USE_SSL = True
@@ -207,6 +202,9 @@ EMAIL_HOST_USER = '2594092351@qq.com'
 EMAIL_HOST_PASSWORD = '密码'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-
 import logging
-logging.basicConfig(filename="periodical_management_system_run_log.log",level=logging.INFO,format='%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')
+
+logging.basicConfig(filename="periodical_management_system_run_log.log", level=logging.INFO,
+                    format='%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "periodical_management_data")
