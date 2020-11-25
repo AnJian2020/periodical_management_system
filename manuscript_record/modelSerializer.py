@@ -9,7 +9,8 @@ class SubjectModelSerializer(serializers.ModelSerializer):
     """
     研究方向模型序列化
     """
-
+    add_time=serializers.DateTimeField(read_only=True,required=False)
+    brief_introduction=serializers.CharField(required=True)
     class Meta:
         model = SubjectModel
         fields = "__all__"

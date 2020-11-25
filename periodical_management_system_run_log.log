@@ -6553,3 +6553,334 @@ Traceback (most recent call last):
 AttributeError: 'str' object has no attribute 'decode'
 2020-11-25 00:39:56,653 - views.py[line:46] - WARNING: user create new subject
 2020-11-25 00:40:05,231 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-25 12:30:44,956 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:32:05,198 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-25 12:34:04,705 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:34:05,220 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:34:59,658 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:35:01,750 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:35:06,293 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:35:06,990 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:36:46,424 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:36:46,936 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:37:25,515 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:37:31,515 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:37:36,912 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:37:37,994 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 57, in put
+    updateSubjectTaskResult=json.loads(updateSubjectOrTradeOrContributionTypeTask.delay(**updateData).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+AssertionError: You must call `.is_valid()` before accessing `.errors`.
+2020-11-25 12:37:54,436 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:37:56,850 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:38:04,212 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:38:04,925 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:39:49,261 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:39:51,649 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:39:56,878 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:39:57,650 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:43:09,265 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:43:11,295 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:43:37,354 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:43:38,114 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:44:26,058 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:44:26,571 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:46:04,701 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:46:06,648 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:46:09,824 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:46:10,542 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:49:22,502 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:49:24,467 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:49:28,422 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:49:29,128 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:50:03,178 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:50:05,167 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:50:08,316 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:50:09,019 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:50:10,538 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:50:11,053 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:50:55,619 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:50:57,697 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:51:04,189 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:51:05,006 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 57, in put
+    updateSubjectTaskResult=json.loads(updateSubjectOrTradeOrContributionTypeTask.delay(**updateData).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+AttributeError: 'SubjectModel' object has no attribute 'subject_id'
+2020-11-25 12:51:37,609 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:51:40,006 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:51:44,025 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:51:44,734 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:51:46,772 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:51:47,288 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:51:53,098 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:51:55,107 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:52:02,112 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:52:02,879 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 12:54:03,830 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:54:05,884 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:54:09,439 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:54:10,289 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 57, in put
+    updateSubjectTaskResult=json.loads(updateSubjectOrTradeOrContributionTypeTask.delay(**updateData).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+TypeError: Object of type __proxy__ is not JSON serializable
+2020-11-25 12:54:44,199 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 12:54:46,101 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 12:54:57,786 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 12:54:58,622 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:08:06,930 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\modelSerializer.py changed, reloading.
+2020-11-25 13:08:09,276 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:08:11,717 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-25 13:08:11,719 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-25 13:08:40,364 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:08:41,193 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:08:56,978 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:08:57,488 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:09:26,051 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:09:27,960 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:09:33,278 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:09:33,995 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:11:16,181 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:11:18,125 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:11:23,328 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:11:24,031 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:11:43,666 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:11:45,781 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:11:52,352 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:11:53,053 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:11:54,560 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:11:55,071 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:12:29,362 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:12:31,429 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:12:35,749 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:12:36,475 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:13:03,662 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:13:05,967 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:13:09,165 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:13:10,049 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 57, in put
+    updateSubjectTaskResult=json.loads(updateSubjectOrTradeOrContributionTypeTask.delay(**updateData).get())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 237, in get
+    on_message=on_message,
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\backends\base.py", line 664, in wait_for_pending
+    return result.maybe_throw(propagate=propagate, callback=callback)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 342, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\result.py", line 335, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\promises.py", line 244, in throw
+    reraise(type(exc), exc, tb)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\vine\five.py", line 195, in reraise
+    raise value
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+2020-11-25 13:13:48,804 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:13:50,946 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:13:52,307 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:13:53,019 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:14:59,880 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:15:01,867 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:15:05,140 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:15:05,840 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:15:26,965 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:15:27,477 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:20:18,838 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:20:20,764 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:20:33,253 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:20:35,318 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:20:40,657 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:20:41,425 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:21:33,204 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:21:36,729 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:21:37,452 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:22:29,568 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:22:31,478 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:25:59,991 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:26:05,442 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:26:17,841 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:26:27,479 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:26:35,245 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:26:35,249 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:27:22,603 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:27:24,705 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:27:25,366 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:27:25,463 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 57, in put
+    updateSubjectTaskResult=json.loads(updateSubjectOrTradeOrContributionTypeTask(**updateData))
+  File "D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py", line 140, in updateSubjectOrTradeOrContributionTypeTask
+    if serializer.is_valid():
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\serializers.py", line 214, in is_valid
+    'Cannot call `.is_valid()` as no `data=` keyword argument was '
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+2020-11-25 13:28:24,632 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:28:27,132 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:28:27,972 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:28:27,991 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:29:03,808 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:29:06,010 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:29:06,886 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:29:06,896 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:29:35,577 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-25 13:29:38,288 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:29:38,871 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:29:38,884 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:30:54,033 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-25 13:30:56,080 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:30:57,064 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:30:57,079 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:34:06,377 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:34:08,662 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:38:24,086 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:38:26,479 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:38:27,166 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-25 13:38:27,171 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-25 13:38:50,482 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:38:50,486 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:40:18,582 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:40:20,756 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:40:43,035 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:40:43,040 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-25 13:40:53,982 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:40:56,439 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:42:38,252 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:42:40,467 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:42:41,300 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:44:36,033 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:44:38,219 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:45:07,267 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-25 13:45:09,130 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:45:19,334 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-25 13:46:16,777 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:46:50,151 - views.py[line:46] - WARNING: user modify subject
+2020-11-25 13:48:48,455 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:48:50,560 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 13:49:38,254 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-25 13:49:40,368 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader

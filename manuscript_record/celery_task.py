@@ -58,7 +58,7 @@ def createSubjectOrTradeOrContributionTypeTask(**newData) -> str:
             return json.dumps({'status': 400, 'data': "数据项不符合要求。"})
     options = newData.get("options")
     name = newData.get('name')
-    bref_introduction = newData.get('bref_introduction')
+    brief_introduction = newData.get('brief_introduction')
     if 'subject' == options:
         dataExists = SubjectModel.objects.filter(name=name)
     elif 'contribution_type' == options:
@@ -71,7 +71,7 @@ def createSubjectOrTradeOrContributionTypeTask(**newData) -> str:
         return json.dumps({'status': 204, 'data': '数据项已经存在，无需重复创建。'})
     else:
 
-        def createID(options)->str:
+        def createID(options) -> str:
             """
             创建id字段
             :param options:
@@ -89,12 +89,58 @@ def createSubjectOrTradeOrContributionTypeTask(**newData) -> str:
             return 'error'
 
         if options == 'subject':
-            serializer = SubjectModelSerializer(data={'id':createID('subject'),"name": name, 'bref_introduction': bref_introduction})
+            serializer = SubjectModelSerializer(
+                data={'id': createID('subject'), "name": name, 'brief_introduction': brief_introduction})
         elif options == 'contribution_type':
-            serializer = ContributionTypeModelSerializer(data=dict(id=createID('contribution_type'),name=name, bref_introduction=bref_introduction))
+            serializer = ContributionTypeModelSerializer(
+                data=dict(id=createID('contribution_type'), name=name, brief_introduction=brief_introduction))
         else:
-            serializer = TradeModelSerializer(data=dict(id=createID('trade'),name=name, bref_introduction=bref_introduction))
+            serializer = TradeModelSerializer(
+                data=dict(id=createID('trade'), name=name, brief_introduction=brief_introduction))
         if serializer.is_valid():
             serializer.save()
+            systemRedis.delete(options)
             return json.dumps({"status": 200, 'data': '数据创建成功。'})
+        return json.dumps({'status': 400, 'data': serializer.errors})
+
+
+@shared_task
+def updateSubjectOrTradeOrContributionTypeTask(**data) -> str:
+    """
+    根据名称更新研究方向、行业领域或者投稿类型信息，并删除redis缓存中的相应数据信息。
+    :param data:
+    :return:
+    """
+    NEED_DATA = ['id', 'name', 'brief_introduction', 'options']
+    for item in NEED_DATA:
+        if item not in data:
+            return json.dumps({'status': 400, 'data': "数据项不符合要求。"})
+    id = data.get('id')
+    options = data.get("options")
+    name = data.get('name')
+    brief_introduction = data.get('brief_introduction')
+    if 'subject' == options:
+        dataExists = SubjectModel.objects.filter(id=id).first()
+    elif 'contribution_type' == options:
+        dataExists = ContributionTypeModel.objects.filter(id=id).first()
+    elif 'trade' == options:
+        dataExists = TradeModel.objects.filter(id=id).first()
+    else:
+        return json.dumps({'status': 400, 'data': '错误操作。'})
+    if not dataExists:
+        return json.dumps({'status': 204, 'data': '修改的数据项不存在。'})
+    else:
+        if 'subject' == options:
+            serializer = SubjectModelSerializer(instance=dataExists,
+                                                data=dict(id=id, name=name, brief_introduction=brief_introduction))
+        elif 'contribution_type' == options:
+            serializer = ContributionTypeModelSerializer(instance=dataExists, data=dict(id=id, name=name,
+                                                                                        brief_introduction=brief_introduction))
+        else:
+            serializer = TradeModelSerializer(instance=dataExists,
+                                              data=dict(id=id, name=name, brief_introduction=brief_introduction))
+        if serializer.is_valid():
+            serializer.update(dataExists, {"id": id, "name": name, "brief_introduction": brief_introduction})
+            systemRedis.delete(options)
+            return json.dumps({'status': 200, 'data': id + '-修改成功。'})
         return json.dumps({'status': 400, 'data': serializer.errors})

@@ -165,7 +165,7 @@ CELERY_ENABLE_UTC = False
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 # token过期时间
-TOKEN_OUT_TIME = 30 * 60
+TOKEN_OUT_TIME = 60 * 60
 # 视图过期时间
 VIEW_OUT_TIME = 60
 # 键值对过期时间

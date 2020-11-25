@@ -13,7 +13,7 @@ class SubjectModel(models.Model):
     add_time = models.DateTimeField(verbose_name="创建时间", default=timezone.now)
 
     def __str__(self):
-        return str(self.subject_id)
+        return str(self.id)
 
     class Meta:
         verbose_name = "研究方向模型"
