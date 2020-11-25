@@ -4,6 +4,7 @@
 import json
 from datetime import datetime
 from celery import shared_task
+from django.db.models import Q
 from .models import SubjectModel, ContributionTypeModel, TradeModel
 # from django.core import serializers
 from .modelSerializer import SubjectModelSerializer, ContributionTypeModelSerializer, TradeModelSerializer
@@ -144,3 +145,25 @@ def updateSubjectOrTradeOrContributionTypeTask(**data) -> str:
             systemRedis.delete(options)
             return json.dumps({'status': 200, 'data': id + '-修改成功。'})
         return json.dumps({'status': 400, 'data': serializer.errors})
+
+
+def deleteSubjectOrTradeContributionTypeTask(options, idOrName) -> str:
+    """
+    根据给定的ID或者名称删除Subject、Trade或者ContributionType中的内容。
+    :param options:
+    :param idOrName:
+    :return:
+    """
+    if 'subject'==options:
+        deleteData=SubjectModel.objects.filter(Q(id=idOrName)|Q(name=idOrName))
+    elif 'Trade'==options:
+        deleteData=TradeModel.objects.filter(Q(id=idOrName)|Q(name=idOrName))
+    elif 'contribution_type'==options:
+        deleteData=ContributionTypeModel.objects,filter(Q(id=idOrName)|Q(name=idOrName))
+    else:
+        return json.dumps({'status':400,'data':'错误操作。'})
+    if deleteData:
+        deleteData.delete()
+        systemRedis.delete(options)
+        return json.dumps({"status":200,'data':'数据删除成功。'})
+    return json.dumps({'status':400,'data':"删除的数据不存在。"})

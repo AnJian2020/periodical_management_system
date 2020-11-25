@@ -8,7 +8,7 @@ from user_authent.token_authentication import TokenAuthenticationRedis
 from user_authent.views import recode_operation_log
 from periodical_management_system.settings import VIEW_OUT_TIME
 from .celery_task import selectSubjectOrTradeOrContributionTypeTask, createSubjectOrTradeOrContributionTypeTask, \
-    updateSubjectOrTradeOrContributionTypeTask
+    updateSubjectOrTradeOrContributionTypeTask, deleteSubjectOrTradeContributionTypeTask
 
 
 @method_decorator(cache_page(VIEW_OUT_TIME), name='get')
@@ -16,7 +16,6 @@ class SubjectView(APIView):
     """
     研究方向处理视图
     """
-    # authentication_classes = []
     authentication_classes = [TokenAuthenticationRedis]
     permission_classes = [IsAuthenticated]
 
@@ -36,7 +35,7 @@ class SubjectView(APIView):
         :param request:
         :return:
         """
-        if request.user.has_perm("manuscript_record.add_trademodel"):
+        if request.user.has_perm("manuscript_record.add_subjectmodel"):
             newSubjectData = request.data.copy()
             newSubjectData['options'] = 'subject'
             createSubjectTaskResult = json.loads(
@@ -51,20 +50,91 @@ class SubjectView(APIView):
         :param request:
         :return:
         """
-        if request.user.has_perm("manuscript_record.change_trademodel"):
-            updateData=request.data.copy()
-            updateData['options']='subject'
-            updateSubjectTaskResult=json.loads(updateSubjectOrTradeOrContributionTypeTask.delay(**updateData).get())
-            return Response(status=updateSubjectTaskResult['status'],data={'message':updateSubjectTaskResult['data']})
-        return Response(status=200)
+        if request.user.has_perm("manuscript_record.change_subjectmodel"):
+            updateData = request.data.copy()
+            updateData['options'] = 'subject'
+            updateSubjectTaskResult = json.loads(updateSubjectOrTradeOrContributionTypeTask.delay(**updateData).get())
+            return Response(status=updateSubjectTaskResult['status'], data={'message': updateSubjectTaskResult['data']})
+        return Response(status=403, data={"message": "该用户无相应权限。"})
 
+    @recode_operation_log(operation="user delete subject", level='warning')
     def delete(self, request) -> Response:
         """
         删除研究方向
         :param request:
         :return:
         """
-        return Response(status=200)
+        if request.user.has_perm('manuscript_record.delete_subjectmodel'):
+            deleteSubjectId = request.data.get('id', None)
+            if deleteSubjectId:
+                deleteSubjectResult = json.dumps(
+                    deleteSubjectOrTradeContributionTypeTask.delay(options='subject', idOrName=deleteSubjectId).get())
+                return Response(status=deleteSubjectId['status'], data={"message": deleteSubjectResult['data']})
+            return Response(status=404, data={"message": "缺少部分参数。"})
+        return Response(status=403, data={"message": "该用户无相应权限。"})
+
+@method_decorator(cache_page(VIEW_OUT_TIME),name='get')
+class TradeView(APIView):
+    """
+    行业领域视图
+    """
+
+    @recode_operation_log(operation="user delete trade", level='warning')
+    def delete(self, request):
+        """
+        删除行业领域
+        :param request:
+        :return:
+        """
+        if request.user.has_perm('manuscript_record.delete_trademodel'):
+            deleteTradeId = request.data.get('id', None)
+            if deleteTradeId:
+                deleteTradeResult = json.dumps(
+                    deleteSubjectOrTradeContributionTypeTask.delay(options='subject', idOrName=deleteTradeId).get())
+                return Response(status=deleteTradeId['status'], data={"message": deleteTradeResult['data']})
+            return Response(status=404, data={"message": "缺少部分参数。"})
+        return Response(status=403, data={"message": "该用户无相应权限。"})
+
+    def get(self, request):
+        """
+        获取行业领域
+        :param request:
+        :return:
+        """
+        selectTradeTaskResult = json.loads(selectSubjectOrTradeOrContributionTypeTask.delay(options='trade').get())
+        return Response(status=200, data={"data": selectTradeTaskResult['data']})
+
+    @recode_operation_log(operation="user create new trade", level='warning')
+    def post(self, request):
+        """
+        创建行业领域
+        :param request:
+        :return:
+        """
+        if request.user.has_perm("manuscript_record.add_trademodel"):
+            newTradeData = request.data.copy()
+            newTradeData['options'] = 'trade'
+            createTradeTaskResult = json.loads(
+                createSubjectOrTradeOrContributionTypeTask.delay(**newTradeData).get())
+            return Response(status=createTradeTaskResult['status'], data={'message': createTradeTaskResult['data']})
+        return Response(status=403, data={"message": "该用户无相应权限。"})
+
+    @recode_operation_log(operation="user modify trade", level='warning')
+    def put(self, request):
+        """
+        修改行业领域信息
+        :param request:
+        :return:
+        """
+        if request.user.has_perm("manuscript_record.change_trademodel"):
+            updateData = request.data.copy()
+            updateData['options'] = 'trade'
+            updateTradeTaskResult = json.loads(updateSubjectOrTradeOrContributionTypeTask.delay(**updateData).get())
+            return Response(status=updateTradeTaskResult['status'], data={'message': updateTradeTaskResult['data']})
+        return Response(status=403, data={"message": "该用户无相应权限。"})
+
+
+
 
 # class ManuscriptView(APIView):
 #     """

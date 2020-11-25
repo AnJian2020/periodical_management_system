@@ -85,9 +85,9 @@ WSGI_APPLICATION = 'periodical_management_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'periodical_management_system.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'periodical_management_system.sqlite3'),
         'TEST': {
-            'NAME': 'periodical_management_db'
+            'NAME': os.path.join(BASE_DIR, 'periodical_management_db.sqlite3')
         }
     }
 }
