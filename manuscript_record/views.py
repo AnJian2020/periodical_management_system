@@ -73,7 +73,8 @@ class SubjectView(APIView):
             return Response(status=404, data={"message": "缺少部分参数。"})
         return Response(status=403, data={"message": "该用户无相应权限。"})
 
-@method_decorator(cache_page(VIEW_OUT_TIME),name='get')
+
+@method_decorator(cache_page(VIEW_OUT_TIME), name='get')
 class TradeView(APIView):
     """
     行业领域视图
@@ -134,7 +135,63 @@ class TradeView(APIView):
         return Response(status=403, data={"message": "该用户无相应权限。"})
 
 
+class ContributionTypeView(APIView):
+    """
+    投稿类型视图，创建、删除、获取与修改
+    """
 
+    @recode_operation_log(operation='user create contribution type', level='warning')
+    def post(self, request):
+        """
+        创建投稿类型
+        :param request:
+        :return:
+        """
+        if request.user.has_perm("manuscript_record.add_contributiontypemodel"):
+            newTradeData = request.data.copy()
+            newTradeData['options'] = 'contribution_type'
+            createContributionTypeTaskResult = json.loads(
+                createSubjectOrTradeOrContributionTypeTask.delay(**newTradeData).get())
+            return Response(status=createContributionTypeTaskResult['status'],
+                            data={'message': createContributionTypeTaskResult['data']})
+        return Response(status=403, data={"message": "该用户无相应权限。"})
+
+    @recode_operation_log(operation="user delete contribution type.", level='warning')
+    def delete(self, request):
+        """
+        删除投稿类型
+        :param request:
+        :return:
+        """
+        if request.user.has_perm('manuscript_record.delete_contributiontypemodel'):
+            deleteContributionTypeId = request.data.get('id', None)
+            if deleteContributionTypeId:
+                deleteContributionTypeResult = json.dumps(
+                    deleteSubjectOrTradeContributionTypeTask.delay(options='contribution_type',
+                                                                   idOrName=deleteContributionTypeId).get())
+                return Response(status=deleteContributionTypeId['status'],
+                                data={"message": deleteContributionTypeResult['data']})
+            return Response(status=404, data={"message": "缺少部分参数。"})
+        return Response(status=403, data={"message": "该用户无相应权限。"})
+
+    def get(self, request):
+        """
+        获取投稿类型信息
+        :param request:
+        :return:
+        """
+        selectContributionTypeTaskResult = json.loads(
+            selectSubjectOrTradeOrContributionTypeTask.delay(options='contribution_type').get())
+        return Response(status=200, data={"data": selectContributionTypeTaskResult['data']})
+
+    @recode_operation_log(operation='user modify contribution type.', level='warning')
+    def put(self, request):
+        if request.user.has_perm("manuscript_record.change_contributiontypemodel"):
+            updateData = request.data.copy()
+            updateData['options'] = 'contribution_type'
+            updateTradeTaskResult = json.loads(updateSubjectOrTradeOrContributionTypeTask.delay(**updateData).get())
+            return Response(status=updateTradeTaskResult['status'], data={'message': updateTradeTaskResult['data']})
+        return Response(status=403, data={"message": "该用户无相应权限。"})
 
 # class ManuscriptView(APIView):
 #     """
