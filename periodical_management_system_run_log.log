@@ -6911,3 +6911,116 @@ AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was pas
 2020-11-25 18:21:51,717 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
 2020-11-25 18:21:53,837 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
 2020-11-25 18:40:07,652 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 21:01:03,446 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-25 21:01:05,535 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-25 21:47:01,762 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-25 21:54:17,850 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-29 16:28:47,681 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-29 17:01:32,303 - views.py[line:46] - WARNING: user create new subject
+2020-11-29 17:01:32,628 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.createSubjectOrTradeOrContributionTypeTask[c4fec49a-95d0-409b-ae3c-6ddcaa103ffb] succeeded in 0.0s: '{"status": 200, "data": "\u6570\u636e\u521b\u5efa\u6210\u529f\u3002"}'
+2020-11-29 17:01:33,135 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.selectSubjectOrTradeOrContributionTypeTask[3e82b865-43fe-4a21-aedd-67629e4322c8] succeeded in 0.031000000017229468s: '{"data": [{"id": "S20201129171320", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54110"}, {"id": "S20201129171321", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54111"}, {"id": "S20201129171322", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54112"}, {"id": "S20201129171323", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54113"}, {"id": "S20201129171324", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54114"}, {"id": "S20201129171325", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54115"}, {"id": "S20201129171326", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54116"}, {"id": "S20201129171327", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54117"}, {"id": "S20201129171328", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54118"}, {"id": "S20201129171329", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54119"}]}'
+2020-11-29 17:05:39,314 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-29 17:05:41,904 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-29 21:21:44,398 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-29 21:22:00,283 - views.py[line:46] - WARNING: user create new subject
+2020-11-29 21:22:00,526 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.createSubjectOrTradeOrContributionTypeTask[174a6bb3-18ea-4753-9227-4163d7beb5b8] succeeded in 0.01600000000325963s: '{"status": 200, "data": "\u6570\u636e\u521b\u5efa\u6210\u529f\u3002"}'
+2020-11-29 21:22:01,275 - views.py[line:46] - WARNING: user delete subject
+2020-11-29 21:22:01,277 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.deleteSubjectOrTradeContributionTypeTask[1d3be78e-fb89-48d2-82ec-e69dd91bafe6] succeeded in 0.0s: '{"status": 400, "data": "\u5220\u9664\u7684\u6570\u636e\u4e0d\u5b58\u5728\u3002"}'
+2020-11-29 21:22:01,286 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 72, in delete
+    return Response(status=deleteSubjectId['status'], data={"message": deleteSubjectResult['data']})
+TypeError: string indices must be integers
+2020-11-29 21:22:02,229 - views.py[line:46] - WARNING: user modify subject
+2020-11-29 21:22:02,230 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.updateSubjectOrTradeOrContributionTypeTask[6b34a37e-e4c2-4c25-a1ce-130bdbf2dc2c] succeeded in 0.0s: '{"status": 400, "data": "\u6570\u636e\u9879\u4e0d\u7b26\u5408\u8981\u6c42\u3002"}'
+2020-11-29 21:22:02,231 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-29 21:22:02,789 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.selectSubjectOrTradeOrContributionTypeTask[decf477c-9674-4014-bfa2-b64fa85772db] succeeded in 0.03200000000651926s: '{"data": [{"id": "S20201129212220", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54110"}, {"id": "S20201129212221", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54111"}, {"id": "S20201129212222", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54112"}, {"id": "S20201129212223", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54113"}, {"id": "S20201129212224", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54114"}, {"id": "S20201129212225", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54115"}, {"id": "S20201129212226", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54116"}, {"id": "S20201129212227", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54117"}, {"id": "S20201129212228", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54118"}, {"id": "S20201129212229", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54119"}]}'
+2020-11-29 21:24:26,586 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-29 21:24:28,743 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-29 21:24:32,579 - views.py[line:46] - WARNING: user create new subject
+2020-11-29 21:24:32,759 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.createSubjectOrTradeOrContributionTypeTask[3567fe85-8ca4-4036-aaa1-c44db5689f52] succeeded in 0.015000000013969839s: '{"status": 200, "data": "\u6570\u636e\u521b\u5efa\u6210\u529f\u3002"}'
+2020-11-29 21:24:33,337 - views.py[line:46] - WARNING: user delete subject
+2020-11-29 21:24:33,340 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.deleteSubjectOrTradeContributionTypeTask[427387ff-a761-4a86-97ad-c15508a6b67a] succeeded in 0.0s: '{"status": 400, "data": "\u5220\u9664\u7684\u6570\u636e\u4e0d\u5b58\u5728\u3002"}'
+2020-11-29 21:24:33,349 - log.py[line:230] - ERROR: Internal Server Error: /record/subject
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\user_authent\views.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 72, in delete
+    return Response(status=deleteSubjectResult['status'], data={"message": deleteSubjectResult['data']})
+TypeError: string indices must be integers
+2020-11-29 21:24:33,845 - views.py[line:46] - WARNING: user modify subject
+2020-11-29 21:24:33,846 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.updateSubjectOrTradeOrContributionTypeTask[d7c64e55-94ac-4b3e-8090-9c7e86701d1e] succeeded in 0.0s: '{"status": 400, "data": "\u6570\u636e\u9879\u4e0d\u7b26\u5408\u8981\u6c42\u3002"}'
+2020-11-29 21:24:33,847 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-29 21:24:34,314 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.selectSubjectOrTradeOrContributionTypeTask[0a6cc059-d6e1-4de5-8d20-f888467287e8] succeeded in 0.031000000017229468s: '{"data": [{"id": "S202011292124340", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54110"}, {"id": "S202011292124341", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54111"}, {"id": "S202011292124342", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54112"}, {"id": "S202011292124343", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54113"}, {"id": "S202011292124344", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54114"}, {"id": "S202011292124345", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54115"}, {"id": "S202011292124346", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54116"}, {"id": "S202011292124347", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54117"}, {"id": "S202011292124348", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54118"}, {"id": "S202011292124349", "name": "\u6d4b\u8bd5\u7814\u7a76\u65b9\u54119"}]}'
+2020-11-29 21:28:51,869 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-29 21:28:53,855 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-29 21:28:57,963 - views.py[line:46] - WARNING: user delete subject
+2020-11-29 21:28:58,133 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.deleteSubjectOrTradeContributionTypeTask[92a432c5-dcd9-4bab-b255-e7bbe313fd6e] succeeded in 0.0s: '{"status": 400, "data": "\u5220\u9664\u7684\u6570\u636e\u4e0d\u5b58\u5728\u3002"}'
+2020-11-29 21:28:58,134 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-29 21:28:58,566 - views.py[line:46] - WARNING: user modify subject
+2020-11-29 21:28:58,567 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.updateSubjectOrTradeOrContributionTypeTask[58c2c69e-2afd-4c46-91a7-f5548f3e687d] succeeded in 0.0s: '{"status": 400, "data": "\u6570\u636e\u9879\u4e0d\u7b26\u5408\u8981\u6c42\u3002"}'
+2020-11-29 21:28:58,567 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-29 21:31:07,011 - views.py[line:46] - WARNING: user modify subject
+2020-11-29 21:31:07,249 - trace.py[line:125] - INFO: Task manuscript_record.celery_task.updateSubjectOrTradeOrContributionTypeTask[38385e80-44da-4490-ab9e-fb65c368e38e] succeeded in 0.0s: '{"status": 204, "data": "\u4fee\u6539\u7684\u6570\u636e\u9879\u4e0d\u5b58\u5728\u3002"}'
+2020-11-29 21:32:11,724 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-29 21:32:14,146 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-29 21:42:35,274 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-29 21:42:37,258 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-29 22:10:27,476 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-29 22:14:33,885 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-29 22:27:11,887 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-29 22:27:14,797 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 00:45:28,664 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 00:45:32,064 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 01:00:15,009 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 01:00:20,082 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 01:00:55,027 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 01:00:57,216 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 01:08:54,049 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 01:08:55,692 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 01:11:01,072 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 01:11:03,614 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 01:18:24,533 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 01:18:27,199 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 01:19:49,199 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 01:19:51,149 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 01:24:10,955 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\urls.py changed, reloading.
+2020-11-30 01:24:12,826 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 01:34:02,543 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-30 01:34:02,544 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-30 01:40:35,633 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 01:40:39,443 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader

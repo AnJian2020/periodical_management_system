@@ -6,5 +6,7 @@ from . import views
 
 urlpatterns=[
     path('subject',views.SubjectView.as_view()),
-    path('trade',views.TradeView.as_view())
+    path('trade',views.TradeView.as_view()),
+    path('contributiontype',views.ContributionTypeView.as_view()),
+    path('manuscript',views.ManuscriptView.as_view())
 ]

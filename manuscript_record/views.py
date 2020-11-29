@@ -8,7 +8,7 @@ from user_authent.token_authentication import TokenAuthenticationRedis
 from user_authent.views import recode_operation_log
 from periodical_management_system.settings import VIEW_OUT_TIME
 from .celery_task import selectSubjectOrTradeOrContributionTypeTask, createSubjectOrTradeOrContributionTypeTask, \
-    updateSubjectOrTradeOrContributionTypeTask, deleteSubjectOrTradeContributionTypeTask
+    updateSubjectOrTradeOrContributionTypeTask, deleteSubjectOrTradeContributionTypeTask, deliverManuscriptTask
 
 
 @method_decorator(cache_page(VIEW_OUT_TIME), name='get')
@@ -67,9 +67,9 @@ class SubjectView(APIView):
         if request.user.has_perm('manuscript_record.delete_subjectmodel'):
             deleteSubjectId = request.data.get('id', None)
             if deleteSubjectId:
-                deleteSubjectResult = json.dumps(
+                deleteSubjectResult = json.loads(
                     deleteSubjectOrTradeContributionTypeTask.delay(options='subject', idOrName=deleteSubjectId).get())
-                return Response(status=deleteSubjectId['status'], data={"message": deleteSubjectResult['data']})
+                return Response(status=deleteSubjectResult['status'], data={"message": deleteSubjectResult['data']})
             return Response(status=404, data={"message": "缺少部分参数。"})
         return Response(status=403, data={"message": "该用户无相应权限。"})
 
@@ -91,7 +91,7 @@ class TradeView(APIView):
             deleteTradeId = request.data.get('id', None)
             if deleteTradeId:
                 deleteTradeResult = json.dumps(
-                    deleteSubjectOrTradeContributionTypeTask.delay(options='subject', idOrName=deleteTradeId).get())
+                    deleteSubjectOrTradeContributionTypeTask.delay(options='trade', idOrName=deleteTradeId).get())
                 return Response(status=deleteTradeId['status'], data={"message": deleteTradeResult['data']})
             return Response(status=404, data={"message": "缺少部分参数。"})
         return Response(status=403, data={"message": "该用户无相应权限。"})
@@ -135,6 +135,7 @@ class TradeView(APIView):
         return Response(status=403, data={"message": "该用户无相应权限。"})
 
 
+@method_decorator(cache_page(VIEW_OUT_TIME), name='get')
 class ContributionTypeView(APIView):
     """
     投稿类型视图，创建、删除、获取与修改
@@ -193,9 +194,44 @@ class ContributionTypeView(APIView):
             return Response(status=updateTradeTaskResult['status'], data={'message': updateTradeTaskResult['data']})
         return Response(status=403, data={"message": "该用户无相应权限。"})
 
-# class ManuscriptView(APIView):
-#     """
-#     稿件的投递，修改以及删除
-#     """
-#     authentication_classes=[TokenAuthenticationRedis]
-#     permission_classes = [IsAuthenticated]
+
+class ManuscriptView(APIView):
+    """
+    稿件的投递，修改，删除以及查看
+    """
+    authentication_classes = [TokenAuthenticationRedis]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request) -> Response:
+        """
+        作者投递稿件
+        :param request:
+        :return:
+        """
+        manuscriptData = request.data.copy()
+        manuscriptData['memory_way']=request.FILES.get('manuscriptDocument')
+        deliverManuscriptTaskResult = json.loads(deleteSubjectOrTradeContributionTypeTask(**manuscriptData))
+        return Response(status=deliverManuscriptTaskResult['status'],
+                        data={'message': deliverManuscriptTaskResult['data']})
+
+
+    def get(self,request)->Response:
+        """
+        查看作者所有的稿件
+        :param request:
+        :return:
+        """
+
+    def delete(self,request)->Response:
+        """
+        删除稿件记录，根据实际业务需求，只支持删除未检测和未审核的稿件记录
+        :param request:
+        :return:
+        """
+
+    def put(self,request)->Response:
+        """
+        修改稿件信息，根据实际业务需求，只支持删除未检测和未审核的稿件记录，以及编辑和审核人员给定修改意见的稿件记录
+        :param request:
+        :return:
+        """

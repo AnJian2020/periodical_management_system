@@ -1,0 +1,5 @@
+{
+  "manuscriptNeedFields":["title","title_English","author","author_English","abstract","abstract_English",
+    "keyword","keyword_English","textOfManuscript","reference","corresponding_author","corresponding_author_contact_way",
+    "subject","contribution_type","trade","memory_way"]
+}
