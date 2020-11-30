@@ -207,4 +207,5 @@ import logging
 logging.basicConfig(filename="periodical_management_system_run_log.log", level=logging.INFO,
                     format='%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "periodical_management_data")
+MEDIA_URL="/periodical_management_system_data/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "periodical_management_system_data")

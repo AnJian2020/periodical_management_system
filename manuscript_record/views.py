@@ -1,7 +1,8 @@
 import json
+from .modelSerializer import ManuscriptModelSerializer
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
-from django.forms import model_to_dict
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -9,7 +10,7 @@ from user_authent.token_authentication import TokenAuthenticationRedis
 from user_authent.views import recode_operation_log
 from periodical_management_system.settings import VIEW_OUT_TIME
 from .celery_task import selectSubjectOrTradeOrContributionTypeTask, createSubjectOrTradeOrContributionTypeTask, \
-    updateSubjectOrTradeOrContributionTypeTask, deleteSubjectOrTradeContributionTypeTask, deliverManuscriptTask
+    updateSubjectOrTradeOrContributionTypeTask, deleteSubjectOrTradeContributionTypeTask, deliverManuscriptTask,selectUserPersonalManuscriptTask
 
 
 @method_decorator(cache_page(VIEW_OUT_TIME), name='get')
@@ -214,29 +215,36 @@ class ManuscriptView(APIView):
         :return:
         """
         manuscriptData = request.data.copy().dict()
-        print(manuscriptData)
         manuscriptData['memory_way'] = request.FILES.get('memory_way')
         deliverManuscriptTaskResult = json.loads(deliverManuscriptTask(**manuscriptData))
         return Response(status=deliverManuscriptTaskResult['status'],
                         data={'message': deliverManuscriptTaskResult['data']})
 
-    # def get(self,request)->Response:
-    #     """
-    #     查看作者所有的稿件
-    #     :param request:
-    #     :return:
-    #     """
-    #
-    # def delete(self,request)->Response:
-    #     """
-    #     删除稿件记录，根据实际业务需求，只支持删除未检测和未审核的稿件记录
-    #     :param request:
-    #     :return:
-    #     """
-    #
-    # def put(self,request)->Response:
-    #     """
-    #     修改稿件信息，根据实际业务需求，只支持删除未检测和未审核的稿件记录，以及编辑和审核人员给定修改意见的稿件记录
-    #     :param request:
-    #     :return:
-    #     """
+    def get(self,request)->Response:
+        """
+        查看作者所有的稿件
+        :param request:
+        :return:
+        """
+        username=request.user.__str__()
+        selectUserPersonalManuscriptTaskResult=selectUserPersonalManuscriptTask(username=username)
+        pageNumberPagination=PageNumberPagination()
+        page=pageNumberPagination.paginate_queryset(queryset=selectUserPersonalManuscriptTaskResult,request=request,view=self)
+        serializer=ManuscriptModelSerializer(instance=page,many=True)
+        return Response(serializer.data)
+
+    def delete(self,request)->Response:
+        """
+        删除稿件记录，根据实际业务需求，只支持删除未检测和未审核的稿件记录
+        :param request:
+        :return:
+        """
+        return Response(status=200)
+
+    def put(self,request)->Response:
+        """
+        修改稿件信息，根据实际业务需求，只支持删除未检测和未审核的稿件记录，以及编辑和审核人员给定修改意见的稿件记录
+        :param request:
+        :return:
+        """
+        return Response(status=200)
