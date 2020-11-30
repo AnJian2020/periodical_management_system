@@ -14,7 +14,7 @@ class ReviewManuscriptModelSerializer(serializers.ModelSerializer):
     稿件审核模型序列化
     """
     class Meta:
-        model=CheckManuscriptModel
+        model=ReviewManuscriptModel
         fields="__all__"
 
 

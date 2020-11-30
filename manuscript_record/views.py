@@ -1,6 +1,7 @@
 import json
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
+from django.forms import model_to_dict
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -79,6 +80,8 @@ class TradeView(APIView):
     """
     行业领域视图
     """
+    authentication_classes = [TokenAuthenticationRedis]
+    permission_classes = [IsAuthenticated]
 
     @recode_operation_log(operation="user delete trade", level='warning')
     def delete(self, request):
@@ -140,6 +143,8 @@ class ContributionTypeView(APIView):
     """
     投稿类型视图，创建、删除、获取与修改
     """
+    authentication_classes = [TokenAuthenticationRedis]
+    permission_classes = [IsAuthenticated]
 
     @recode_operation_log(operation='user create contribution type', level='warning')
     def post(self, request):
@@ -208,30 +213,30 @@ class ManuscriptView(APIView):
         :param request:
         :return:
         """
-        manuscriptData = request.data.copy()
-        manuscriptData['memory_way']=request.FILES.get('manuscriptDocument')
-        deliverManuscriptTaskResult = json.loads(deleteSubjectOrTradeContributionTypeTask(**manuscriptData))
+        manuscriptData = request.data.copy().dict()
+        print(manuscriptData)
+        manuscriptData['memory_way'] = request.FILES.get('memory_way')
+        deliverManuscriptTaskResult = json.loads(deliverManuscriptTask(**manuscriptData))
         return Response(status=deliverManuscriptTaskResult['status'],
                         data={'message': deliverManuscriptTaskResult['data']})
 
-
-    def get(self,request)->Response:
-        """
-        查看作者所有的稿件
-        :param request:
-        :return:
-        """
-
-    def delete(self,request)->Response:
-        """
-        删除稿件记录，根据实际业务需求，只支持删除未检测和未审核的稿件记录
-        :param request:
-        :return:
-        """
-
-    def put(self,request)->Response:
-        """
-        修改稿件信息，根据实际业务需求，只支持删除未检测和未审核的稿件记录，以及编辑和审核人员给定修改意见的稿件记录
-        :param request:
-        :return:
-        """
+    # def get(self,request)->Response:
+    #     """
+    #     查看作者所有的稿件
+    #     :param request:
+    #     :return:
+    #     """
+    #
+    # def delete(self,request)->Response:
+    #     """
+    #     删除稿件记录，根据实际业务需求，只支持删除未检测和未审核的稿件记录
+    #     :param request:
+    #     :return:
+    #     """
+    #
+    # def put(self,request)->Response:
+    #     """
+    #     修改稿件信息，根据实际业务需求，只支持删除未检测和未审核的稿件记录，以及编辑和审核人员给定修改意见的稿件记录
+    #     :param request:
+    #     :return:
+    #     """

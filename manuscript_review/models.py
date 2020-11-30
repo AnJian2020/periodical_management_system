@@ -7,14 +7,14 @@ class CheckManuscriptModel(models.Model):
     稿件检测信息模型
     """
     id = models.CharField(max_length=25, primary_key=True, verbose_name="id")
-    check_name = models.CharField(max_length=150, verbose_name="检测人员姓名")
-    check_contact_way = models.CharField(max_length=64, verbose_name="检测人员联系方式")
-    duplicate_checking_rate = models.FloatField(verbose_name="查重率")
-    multiple_contributions_to_one_manuscript = models.BooleanField(verbose_name="是否一稿多投")
-    is_subject = models.BooleanField(verbose_name="研究方向是否相符")
-    is_contribution = models.BooleanField(verbose_name="投稿类型是否相符")
-    is_trade = models.BooleanField(verbose_name="行业领域是否相符")
-    check_result = models.CharField(verbose_name="检测结果", max_length=16)
+    check_name = models.CharField(max_length=150, verbose_name="检测人员姓名",blank=True,null=True)
+    check_contact_way = models.CharField(max_length=64, verbose_name="检测人员联系方式",null=True,blank=True)
+    duplicate_checking_rate = models.FloatField(verbose_name="查重率",blank=True,null=True)
+    multiple_contributions_to_one_manuscript = models.BooleanField(verbose_name="是否一稿多投",blank=True,null=True)
+    is_subject = models.BooleanField(verbose_name="研究方向是否相符",blank=True,null=True)
+    is_contribution = models.BooleanField(verbose_name="投稿类型是否相符",blank=True,null=True)
+    is_trade = models.BooleanField(verbose_name="行业领域是否相符",blank=True,null=True)
+    check_result = models.CharField(verbose_name="检测结果", max_length=16,blank=True,null=True)
     check_time = models.DateTimeField(verbose_name="检测时间", default=timezone.now)
 
     def __str__(self):

@@ -192,7 +192,7 @@ def deliverManuscriptTask(**kwargs) -> str:
             id = "M" + idNumber
         elif idName == "check_id":
             id = "C" + idNumber
-        elif idName=="review_id":
+        elif idName == "review_id":
             id = "R" + idNumber
         else:
             return
@@ -201,12 +201,16 @@ def deliverManuscriptTask(**kwargs) -> str:
     manuscriptData = kwargs.copy()
     manuscriptData['check_status'] = dict()
     manuscriptData['review_status'] = dict()
-    manuscriptData['manuscript_id']=createID("manuscript_id")
-    manuscriptData['check_status']['id']=createID('check_id')
-    manuscriptData['review_status']['id']=createID('review_id')
+    manuscriptData['manuscript_id'] = createID("manuscript_id")
+    manuscriptData['check_status']['id'] = createID('check_id')
+    manuscriptData['review_status']['id'] = createID('review_id')
+    manuscriptData['subject'] = [manuscriptData['subject']]
+    manuscriptData['trade'] = [manuscriptData['trade']]
+    manuscriptData['contribution_type'] = [manuscriptData['contribution_type']]
 
-    serializer=ManuscriptModelSerializer(data=manuscriptData)
+    serializer = ManuscriptModelSerializer(data=manuscriptData)
     if serializer.is_valid():
         serializer.save()
-        return json.dumps({"status":200,"data":"稿件数据插入成功。"})
-    return json.dumps({"status":400,'data':"稿件数据项不符合要求。"})
+        return json.dumps({"status": 200, "data": "稿件数据插入成功。"})
+    print(serializer.error_messages)
+    return json.dumps({"status": 400, 'data': serializer.errors})

@@ -7024,3 +7024,231 @@ TypeError: string indices must be integers
 2020-11-30 01:34:02,544 - log.py[line:230] - WARNING: Forbidden: /record/subject
 2020-11-30 01:40:35,633 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
 2020-11-30 01:40:39,443 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:14:31,969 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 12:14:34,809 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:14:50,336 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:23:05,108 - log.py[line:230] - WARNING: Not Found: /
+2020-11-30 12:23:06,004 - log.py[line:230] - WARNING: Not Found: /favicon.ico
+2020-11-30 12:27:42,502 - views.py[line:46] - WARNING: user delete subject
+2020-11-30 12:27:55,485 - views.py[line:46] - WARNING: user delete subject
+2020-11-30 12:28:18,051 - views.py[line:46] - WARNING: user delete subject
+2020-11-30 12:28:27,980 - views.py[line:46] - WARNING: user delete subject
+2020-11-30 12:28:28,489 - log.py[line:230] - WARNING: Bad Request: /record/subject
+2020-11-30 12:29:05,477 - views.py[line:46] - WARNING: user delete subject
+2020-11-30 12:29:39,601 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-30 12:30:13,727 - views.py[line:46] - WARNING: user create new subject
+2020-11-30 12:30:18,470 - log.py[line:230] - WARNING: Forbidden: /record/subject
+2020-11-30 12:30:47,322 - views.py[line:46] - WARNING: user create new subject
+2020-11-30 12:30:54,788 - views.py[line:46] - WARNING: user create new subject
+2020-11-30 12:31:04,304 - views.py[line:46] - WARNING: user create new subject
+2020-11-30 12:31:12,294 - views.py[line:46] - WARNING: user create new subject
+2020-11-30 12:31:59,923 - views.py[line:46] - WARNING: user create new subject
+2020-11-30 12:33:43,100 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\admin.py changed, reloading.
+2020-11-30 12:33:43,391 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\admin.py changed, reloading.
+2020-11-30 12:33:46,148 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:33:46,274 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:38:36,866 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\admin.py changed, reloading.
+2020-11-30 12:38:37,211 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\admin.py changed, reloading.
+2020-11-30 12:38:39,331 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:38:39,629 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:41:35,698 - log.py[line:230] - WARNING: Forbidden: /record/contributiontype
+2020-11-30 12:42:12,430 - log.py[line:230] - WARNING: Forbidden: /record/contributiontype
+2020-11-30 12:42:13,717 - log.py[line:230] - WARNING: Forbidden: /record/contributiontype
+2020-11-30 12:42:36,455 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\admin.py changed, reloading.
+2020-11-30 12:42:37,219 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\admin.py changed, reloading.
+2020-11-30 12:42:38,755 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:42:39,594 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:55:44,437 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 12:55:44,456 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 12:55:47,437 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:55:47,444 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 12:55:47,908 - views.py[line:46] - WARNING: user create contribution type
+2020-11-30 12:56:04,430 - views.py[line:46] - WARNING: user create contribution type
+2020-11-30 12:56:13,760 - views.py[line:46] - WARNING: user create contribution type
+2020-11-30 12:56:35,142 - views.py[line:46] - WARNING: user create contribution type
+2020-11-30 12:56:42,381 - views.py[line:46] - WARNING: user create contribution type
+2020-11-30 13:01:47,801 - views.py[line:46] - WARNING: user create new trade
+2020-11-30 13:02:46,365 - views.py[line:46] - WARNING: user create new trade
+2020-11-30 13:03:13,469 - views.py[line:46] - WARNING: user create new trade
+2020-11-30 13:03:21,514 - views.py[line:46] - WARNING: user create new trade
+2020-11-30 13:03:27,534 - views.py[line:46] - WARNING: user create new trade
+2020-11-30 14:02:25,538 - token_authentication.py[line:37] - ERROR: 'NoneType' object has no attribute 'decode'
+2020-11-30 14:02:25,541 - log.py[line:230] - WARNING: Forbidden: /record/manuscript
+2020-11-30 14:02:54,360 - log.py[line:230] - ERROR: Internal Server Error: /record/manuscript
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 217, in post
+    deliverManuscriptTaskResult = json.loads(deleteSubjectOrTradeContributionTypeTask(**manuscriptData))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\local.py", line 191, in __call__
+    return self._get_current_object()(*a, **kw)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\app\task.py", line 391, in __call__
+    return self.run(*args, **kwargs)
+TypeError: deleteSubjectOrTradeContributionTypeTask() got an unexpected keyword argument 'title'
+2020-11-30 14:03:44,308 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:03:44,384 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:03:46,769 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:03:46,770 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:03:48,753 - log.py[line:230] - ERROR: Internal Server Error: /record/manuscript
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 217, in post
+    deliverManuscriptTaskResult = json.loads(deleteSubjectOrTradeContributionTypeTask(**manuscriptData))
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\local.py", line 191, in __call__
+    return self._get_current_object()(*a, **kw)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\celery\app\task.py", line 391, in __call__
+    return self.run(*args, **kwargs)
+TypeError: deleteSubjectOrTradeContributionTypeTask() got an unexpected keyword argument 'title'
+2020-11-30 14:04:16,340 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:04:16,382 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:04:19,270 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:04:19,287 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:04:19,830 - log.py[line:230] - WARNING: Bad Request: /record/manuscript
+2020-11-30 14:04:55,235 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 14:04:55,236 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 14:04:57,887 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:04:57,887 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:04:58,642 - log.py[line:230] - ERROR: Internal Server Error: /record/manuscript
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 217, in post
+    deliverManuscriptTaskResult = json.loads(deliverManuscriptTask(**manuscriptData))
+  File "D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py", line 212, in deliverManuscriptTask
+    return json.dumps({"status":400,'data':serializer.error_messages})
+  File "D:\application\python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "D:\application\python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\application\python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\application\python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type __proxy__ is not JSON serializable
+2020-11-30 14:05:28,035 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 14:05:28,396 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 14:05:31,914 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:05:32,038 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:05:33,148 - log.py[line:230] - WARNING: Bad Request: /record/manuscript
+2020-11-30 14:06:14,403 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:06:14,559 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:06:17,299 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:06:17,519 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:06:22,455 - log.py[line:230] - WARNING: Bad Request: /record/manuscript
+2020-11-30 14:10:10,134 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:10:10,416 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:10:12,443 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:10:12,782 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:10:13,155 - log.py[line:230] - ERROR: Internal Server Error: /record/manuscript
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 216, in post
+    manuscriptData = serializers.serialize('json',request.data.copy())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\serializers\__init__.py", line 128, in serialize
+    s.serialize(queryset, **options)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\serializers\base.py", line 94, in serialize
+    concrete_model = obj._meta.concrete_model
+AttributeError: 'str' object has no attribute '_meta'
+2020-11-30 14:11:25,863 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:11:26,075 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:11:28,176 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:11:28,344 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:11:28,940 - log.py[line:230] - ERROR: Internal Server Error: /record/manuscript
+Traceback (most recent call last):
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\pythonCode\periodical_management_system\manuscript_record\views.py", line 216, in post
+    manuscriptData = model_to_dict(request.data.copy())
+  File "D:\pythonCode\periodical_management_system\venv\lib\site-packages\django\forms\models.py", line 85, in model_to_dict
+    opts = instance._meta
+AttributeError: 'QueryDict' object has no attribute '_meta'
+2020-11-30 14:11:46,211 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:11:47,061 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:11:48,339 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:11:49,015 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:14:16,109 - log.py[line:230] - WARNING: Bad Request: /record/manuscript
+2020-11-30 14:16:16,122 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:16:16,160 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\views.py changed, reloading.
+2020-11-30 14:16:18,694 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:16:19,480 - log.py[line:230] - WARNING: Bad Request: /record/manuscript
+2020-11-30 14:19:18,136 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 14:19:18,286 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_record\celery_task.py changed, reloading.
+2020-11-30 14:19:20,946 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:19:21,044 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:19:21,652 - log.py[line:230] - WARNING: Bad Request: /record/manuscript
+2020-11-30 14:22:27,775 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_review\modelSerializer.py changed, reloading.
+2020-11-30 14:22:27,831 - autoreload.py[line:236] - INFO: D:\pythonCode\periodical_management_system\manuscript_review\modelSerializer.py changed, reloading.
+2020-11-30 14:22:29,973 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
+2020-11-30 14:22:29,985 - autoreload.py[line:613] - INFO: Watching for file changes with StatReloader
