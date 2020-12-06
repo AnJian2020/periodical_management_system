@@ -6,9 +6,9 @@ import logging
 import json
 from datetime import datetime
 from celery import shared_task
-from django.db.models import Q
+from django.db.models import Q, QuerySet
 from .models import SubjectModel, ContributionTypeModel, TradeModel, ManuscriptModel
-from django.core import serializers
+# from django.core import serializers
 from .modelSerializer import SubjectModelSerializer, ContributionTypeModelSerializer, TradeModelSerializer, \
     ManuscriptModelSerializer
 from django_redis import get_redis_connection
@@ -217,7 +217,7 @@ def deliverManuscriptTask(**kwargs) -> str:
     return json.dumps({"status": 400, 'data': serializer.errors})
 
 
-def selectUserPersonalManuscriptTask(username: str, order_by=None, options=None):
+def selectUserPersonalManuscriptTask(username: str, order_by=None, options=None) -> (int, QuerySet):
     """
     查询用户稿件
     :param username:
@@ -241,3 +241,27 @@ def selectUserPersonalManuscriptTask(username: str, order_by=None, options=None)
             manuscript_id=options).order_by("manuscript_id")
         userPersonalManuscriptQuerySetCount = userPersonalManuscriptQuerySet.count()
     return userPersonalManuscriptQuerySetCount, userPersonalManuscriptQuerySet
+
+
+@shared_task
+def deleteUserPersonalManuscriptTask(username: str, manuscript_id: str) -> str:
+    """
+    用户自行删除个人稿件，只能删除未审核或者未检测的个人稿件
+    :param username:
+    :param manuscript_id:
+    :return:
+    """
+    userManuscript = ManuscriptModel.objects.filter(
+        Q(author=username) | Q(author_English=username) | Q(corresponding_author=username),
+        manuscript_id=manuscript_id)
+    if userManuscript is None:
+        return json.dumps({"status":400,"data":"稿件删除失败，原因：该稿件不存在！"})
+    elif userManuscript.first() and userManuscript.first().check_status.check_name or userManuscript.first().review_status.preliminary_user:
+        return json.dumps({"status": 400, "data": "稿件删除失败，原因：稿件已进行检测或已进行审核，无法删除。"})
+    else:
+        try:
+            userManuscript.delete()
+            return json.dumps({'status': 200, "data": manuscript_id + "稿件删除成功!"})
+        except Exception as error:
+            logging.error(error)
+            return json.dumps({"status": 400, "data": "稿件删除失败，原因：系统错误！"})
