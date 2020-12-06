@@ -217,21 +217,27 @@ def deliverManuscriptTask(**kwargs) -> str:
     return json.dumps({"status": 400, 'data': serializer.errors})
 
 
-def selectUserPersonalManuscriptTask(username, options=None, sort_by=None):
+def selectUserPersonalManuscriptTask(username: str, order_by=None, options=None):
     """
-    根据用户名查询全部或者部分用户的稿件数据，目前使用装饰器shared_task时会出现bug，故暂时不进行分布式处理。
+    查询用户稿件
     :param username:
-    :param options: options为None，则查询用户所有的稿件数据，可以为稿件标题，id,作者，通讯作者等
-    :param sort_by: 排序关键字
+    :param order_by: 排序关键字，分别为manuscript_id,title,contribution_time,默认为manuscript_id
+    :param options: 查询具体稿件,目前只能是稿件id
     :return:
     """
-
-    if not options:
+    if options is None:
         userPersonalManuscriptQuerySet = ManuscriptModel.objects.filter(
             Q(author=username) | Q(author_English=username) | Q(corresponding_author=username))
+        if order_by == "title":
+            userPersonalManuscriptQuerySet = userPersonalManuscriptQuerySet.order_by('title')
+        elif order_by == "contribution_time":
+            userPersonalManuscriptQuerySet = userPersonalManuscriptQuerySet.order_by('contribution_time')
+        else:
+            userPersonalManuscriptQuerySet = userPersonalManuscriptQuerySet.order_by('manuscript_id')
+        userPersonalManuscriptQuerySetCount = userPersonalManuscriptQuerySet.count()
     else:
-        userPersonalManuscriptQuerySet=ManuscriptModel.objects.all().order_by('manuscript_id')
-    # userPersonalManuscript=serializers.serialize('json',userPersonalManuscriptQuerySet)
-    return userPersonalManuscriptQuerySet
-
-
+        userPersonalManuscriptQuerySet = ManuscriptModel.objects.filter(
+            Q(author=username) | Q(author_English=username) | Q(corresponding_author=username),
+            manuscript_id=options).order_by("manuscript_id")
+        userPersonalManuscriptQuerySetCount = userPersonalManuscriptQuerySet.count()
+    return userPersonalManuscriptQuerySetCount, userPersonalManuscriptQuerySet
