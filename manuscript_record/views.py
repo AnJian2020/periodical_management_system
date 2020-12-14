@@ -1,5 +1,4 @@
 import json
-from .models import ManuscriptModel
 from .modelSerializer import ManuscriptModelSerializer
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
@@ -12,7 +11,7 @@ from user_authent.views import recode_operation_log
 from periodical_management_system.settings import VIEW_OUT_TIME
 from .celery_task import selectSubjectOrTradeOrContributionTypeTask, createSubjectOrTradeOrContributionTypeTask, \
     updateSubjectOrTradeOrContributionTypeTask, deleteSubjectOrTradeContributionTypeTask, deliverManuscriptTask, \
-    selectUserPersonalManuscriptTask, deleteUserPersonalManuscriptTask
+    selectUserPersonalManuscriptTask, deleteUserPersonalManuscriptTask, modifyUserPersonalManuscriptTask
 
 
 @method_decorator(cache_page(VIEW_OUT_TIME), name='get')
@@ -259,4 +258,10 @@ class ManuscriptView(APIView):
         :param request:
         :return:
         """
-        return Response(status=200)
+        username = request.user.__str__()
+        manuscript_data = request.data.copy().dict()
+        manuscript_data['memory_way'] = request.FILES.get('memory_way')
+        modifyUserPersonalManuscriptTaskResult = json.loads(
+            modifyUserPersonalManuscriptTask(username, **manuscript_data))
+        return Response(status=modifyUserPersonalManuscriptTaskResult['status'],
+                        data={"message": modifyUserPersonalManuscriptTaskResult['data']})

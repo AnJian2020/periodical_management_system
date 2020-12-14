@@ -8,7 +8,7 @@ from datetime import datetime
 from celery import shared_task
 from django.db.models import Q, QuerySet
 from .models import SubjectModel, ContributionTypeModel, TradeModel, ManuscriptModel
-# from django.core import serializers
+from django.core import serializers
 from .modelSerializer import SubjectModelSerializer, ContributionTypeModelSerializer, TradeModelSerializer, \
     ManuscriptModelSerializer
 from django_redis import get_redis_connection
@@ -39,6 +39,7 @@ def selectSubjectOrTradeOrContributionTypeTask(options) -> str:
     systemRedis.delete(options)
     for item in selectResultData:
         resultData.append(dict(id=item.id, name=item.name))
+        # 将查询信息存储到redis中
         systemRedis.lpush(options, json.dumps(dict(id=item.id, name=item.name)))
     result = json.dumps({'data': resultData})
 
@@ -52,7 +53,7 @@ def selectSubjectOrTradeOrContributionTypeTask(options) -> str:
 @shared_task
 def createSubjectOrTradeOrContributionTypeTask(**newData) -> str:
     """
-    创建新的研究方向，并且更新redis存储的subject列表字段
+    创建新的研究方向，并且删除redis存储的subject列表字段
     :param newSubject:
     :return:
     """
@@ -213,7 +214,7 @@ def deliverManuscriptTask(**kwargs) -> str:
     if serializer.is_valid():
         serializer.save()
         return json.dumps({"status": 200, "data": "稿件数据插入成功。"})
-    logging.error(serializer.error_messages)
+    # logging.error(serializer.error_messages)
     return json.dumps({"status": 400, 'data': serializer.errors})
 
 
@@ -255,7 +256,7 @@ def deleteUserPersonalManuscriptTask(username: str, manuscript_id: str) -> str:
         Q(author=username) | Q(author_English=username) | Q(corresponding_author=username),
         manuscript_id=manuscript_id)
     if userManuscript is None:
-        return json.dumps({"status":400,"data":"稿件删除失败，原因：该稿件不存在！"})
+        return json.dumps({"status": 400, "data": "稿件删除失败，原因：该稿件不存在！"})
     elif userManuscript.first() and userManuscript.first().check_status.check_name or userManuscript.first().review_status.preliminary_user:
         return json.dumps({"status": 400, "data": "稿件删除失败，原因：稿件已进行检测或已进行审核，无法删除。"})
     else:
@@ -265,3 +266,30 @@ def deleteUserPersonalManuscriptTask(username: str, manuscript_id: str) -> str:
         except Exception as error:
             logging.error(error)
             return json.dumps({"status": 400, "data": "稿件删除失败，原因：系统错误！"})
+
+
+def modifyUserPersonalManuscriptTask(username: str, **kwargs) -> str:
+    """
+    用户修改个人稿件，只能是修改未审核、未检测、检测或者审核意见为修改的稿件。
+    :param username:
+    :param kwargs:
+    :return:
+    """
+    with open(os.path.join(os.getcwd(), 'manuscript_record', 'dataItemConfiguration.json'), 'r', encoding='utf-8') as f:
+        manuscriptNeedField = json.load(f)['manuscriptNeedField']
+    for field in manuscriptNeedField:
+        if field not in kwargs.keys():
+            return json.dumps({'status': 400, 'data': "稿件信息修改失败，原因：数据项不符合要求。"})
+    manuscript_id = kwargs.get('manuscript_id', 0)
+    manuscript = ManuscriptModel.objects.filter(Q(author=username) | Q(author_English=username),
+                                                manuscript_id=manuscript_id).first()
+    if manuscript:
+        if manuscript.check_status.check_name or manuscript.review_status.preliminary_user:
+            return json.dumps({"status":400,"data":"稿件信息修改失败，原因：稿件已检测或已审核。"})
+        else:
+            serializer = ManuscriptModelSerializer(data=kwargs)
+            if serializer.is_valid():
+                serializer.update(instance=manuscript, validated_data=kwargs)
+                return json.dumps({"status": 200, "data": "稿件信息修改成功。"})
+            return json.dumps({"status": 400, 'data': "稿件信息修改失败，原因：数据项不符。"})
+    return json.dumps({'status': 400, 'data': "稿件信息修改失败，原因：该稿件不存在。"})
